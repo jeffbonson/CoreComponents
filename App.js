@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Button, Pressable, Modal, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, Button, Pressable, Modal, StatusBar, ActivityIndicator } from 'react-native';
 const logo = require("./assets/splash.png");
 
 export default function App() {
@@ -14,7 +14,6 @@ export default function App() {
           <Image source={logo} style={{width: 300, height: 300}}/>
         </Pressable>
         <Button title="Open modal" onPress={() => setData({...data, modal: true})} color="red"/>
-        <Image source={logo} style={{width: 300, height: 300}}/>
       </ScrollView>
       <Modal
         visible={data.modal}
@@ -30,6 +29,7 @@ export default function App() {
           </Text>
           <Button title="Close" onPress={() => setData({...data, modal: false})} />
       </Modal>
+      <ActivityIndicator size="large" color="red" animating={true}/>
     </View>
   );
 }
