@@ -15,4 +15,7 @@ onPressIn
 - animationType can be fade, slide
 - presentationStyle='formSheet' and pageSheet - only works for ios
 
-
+# StatusBar
+- Cannot change the ios background color. only in ios
+- Text color can be changed
+- barStyle can be light or dark
