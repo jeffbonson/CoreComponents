@@ -1,5 +1,0 @@
-npx create-expo-app@latest CoreComponents --template blank@sdk-51
-
-onPressIn
-  onPressOut > onPress
-  500ms > onLongPress > onPressOut
