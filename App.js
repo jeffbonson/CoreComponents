@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, Button, Pressable, Modal, StatusBar, ActivityIndicator, Alert } from 'react-native';
+import Greet from './components/Greet';
 const logo = require("./assets/splash.png");
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"green"} barStyle="light-content"/>
+      <Greet name="Jeff" />
       <ScrollView>
         <Pressable onPress={() => alert('image pressed')}>
           <Image source={logo} style={{width: 300, height: 300}}/>
