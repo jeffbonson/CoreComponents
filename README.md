@@ -25,3 +25,13 @@ onPressIn
 - color can be changed
 - animating - true to display, false to hide
 
+# Alert
+- Alert.alert('adasdasd')
+- Alert.alert("Invalid data", "Dob Incorrect")
+- Alert with 2 buttons
+  - Alert.alert("Invalid data", "Dob Incorrect", [
+        {text: 'Cancel', onPress: () => alert('Cancel pressed')},
+        {text: 'Ok', onPress: () => alert('Ok pressed')},
+      ])
+- Please refer the documentation at reactnative.dev/docs/accessibilityinfo for android vs ios
+

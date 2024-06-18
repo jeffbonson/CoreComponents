@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Button, Pressable, Modal, StatusBar, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, Button, Pressable, Modal, StatusBar, ActivityIndicator, Alert } from 'react-native';
 const logo = require("./assets/splash.png");
 
 export default function App() {
@@ -30,6 +30,10 @@ export default function App() {
           <Button title="Close" onPress={() => setData({...data, modal: false})} />
       </Modal>
       <ActivityIndicator size="large" color="red" animating={true}/>
+      <Button title="Show Alert" onPress={() => Alert.alert("Invalid data", "Dob Incorrect",[
+        {text: 'Cancel', onPress: () => alert('Cancel pressed')},
+        {text: 'Ok', onPress: () => alert('Ok pressed')},
+      ])} />
     </View>
   );
 }
