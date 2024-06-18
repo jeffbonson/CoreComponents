@@ -19,3 +19,9 @@ onPressIn
 - Cannot change the ios background color. only in ios
 - Text color can be changed
 - barStyle can be light or dark
+
+# ActivityIndicator
+- Size: can be large and small
+- color can be changed
+- animating - true to display, false to hide
+
