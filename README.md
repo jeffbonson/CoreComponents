@@ -42,3 +42,9 @@ onPressIn
 - Dimensions.get("screen") or "window". 
 - dimension are not recommended
 - orientation changed from portrait to default
+
+# SafeAreaView
+- the ios device has a problem with margin top, 
+- so we usually add a margin-top so that we can see the top section.
+- this is not the right way to do it though.
+- Hence we use a SafeAreaView
