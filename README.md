@@ -35,3 +35,10 @@ onPressIn
       ])
 - Please refer the documentation at reactnative.dev/docs/accessibilityinfo for android vs ios
 
+# Box Layout
+- might need to add a margin top for ios
+- view is already a flex container and child are all flex items
+- default relative position
+- Dimensions.get("screen") or "window". 
+- dimension are not recommended
+- orientation changed from portrait to default
