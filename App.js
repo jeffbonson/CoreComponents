@@ -1,16 +1,16 @@
-import { StyleSheet, View, Text, SafeAreaView} from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, StatusBar,} from 'react-native';
+import { restaurantData } from './assets/data/restaurantData';
 // import NativeComponents from './components/NativeComponents';
 import Box from './components/layout/Box';
 import CustomButton from './components/customButtons/customButton';
+import Restaurants from './components/Foodies/Restaurants';
 
 export default function App() {
  
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
-        <Box style={{backgroundColor: "green"}}>
-          <CustomButton />
-        </Box>
+          <Restaurants />
       </View>
     </SafeAreaView>
   );
@@ -18,13 +18,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
   safeAreaContainer: {
-    flex: 1, // this is needed.
-    backgroundColor: 'lightblue', // this is needed same as container bg.
+    flex: 1, 
+    backgroundColor: '#F5F5F5',
+    paddingTop: StatusBar.currentHeight,
   },
   container: {
     flex: 1,
-    backgroundColor: 'lightblue',
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#FFF',
   }
 });
