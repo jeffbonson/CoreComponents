@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, SafeAreaView} from 'react-native';
 // import NativeComponents from './components/NativeComponents';
 import Box from './components/layout/Box';
+import CustomButton from './components/customButtons/customButton';
 
 export default function App() {
  
@@ -8,7 +9,7 @@ export default function App() {
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
         <Box style={{backgroundColor: "green"}}>
-          <Text>Welcome</Text>
+          <CustomButton />
         </Box>
       </View>
     </SafeAreaView>

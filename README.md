@@ -48,3 +48,8 @@ onPressIn
 - so we usually add a margin-top so that we can see the top section.
 - this is not the right way to do it though.
 - Hence we use a SafeAreaView
+
+# Platform specific code
+- Platform.OS
+- Platform.select
+- file extensions like .ios.js / android.js used in components/customButtons
