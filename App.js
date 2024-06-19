@@ -1,15 +1,15 @@
 import { StyleSheet, View, Text, SafeAreaView, StatusBar,} from 'react-native';
 import { restaurantData } from './assets/data/restaurantData';
 // import NativeComponents from './components/NativeComponents';
-import Box from './components/layout/Box';
-import CustomButton from './components/customButtons/customButton';
 import Restaurants from './components/Foodies/Restaurants';
+import RestaurantMenu from './components/Foodies/RestaurantMenu';
 
 export default function App() {
  
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
+          <RestaurantMenu />
           <Restaurants />
       </View>
     </SafeAreaView>
