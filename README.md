@@ -53,3 +53,9 @@ onPressIn
 - Platform.OS
 - Platform.select
 - file extensions like .ios.js / android.js used in components/customButtons
+
+# Flatlist
+- used for long list
+- renders items lazely and saved processing time
+- ItemSeparatorComponent - except for top and bottom
+- ListEmptyComponent - when the data is empty array
