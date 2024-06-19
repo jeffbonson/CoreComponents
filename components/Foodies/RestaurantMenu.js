@@ -17,7 +17,7 @@ const RestaurantMenu = () => {
         SectionSeparatorComponent={() => <View style={{height: 16}} />}
         renderItem={({ item }) => {
           return <View style={styles.groupedListItem}>
-            <Text>{item}</Text>
+            <Text style={styles.text}>{item}</Text>
           </View>
         }} />
     </View>
@@ -31,13 +31,11 @@ const styles = StyleSheet.create({
   sectionHeader: {fontWeight: "bold"},
   groupedListItem: {
     padding: 10,
-    borderColor: "lightgray",
-    borderWidth: 1,
-    borderStyle: "solid",
     overflow: "hidden",
     borderRadius: 10,
+    backgroundColor: "#f2b2c6"
   },
-  text: { color: "black", fontWeight: "bold",fontSize: 50 }
+  text: { color: "#000" }
 });
 
 export default RestaurantMenu;

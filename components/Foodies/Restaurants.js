@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   title: {fontSize: 20, fontWeight: "bold", color: "#000", padding: 10 },
   row:{ flexDirection: "row", flex: 1 },
-  text: { color: "black", fontWeight: "bold",fontSize: 50 }
+  text: { color: "black", fontWeight: "bold",fontSize: 50,  }
 });
 
 export default Restaurants;
