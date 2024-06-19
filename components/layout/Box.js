@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, useWindowDimensions } from "react-native";
+import { View, Text, StyleSheet, Dimensions, useWindowDimensions, Platform } from "react-native";
 import { useState, useEffect } from "react";
 
 const Box = ({children, style}) => {
@@ -34,6 +34,10 @@ const Box = ({children, style}) => {
       backgroundColor: "red",
     },
     text: {
+      ...Platform.select({ // this is recommended.
+        ios: {color: 'purple', fontSize: 24},
+        android: {color: 'white', fontSize: 30},
+      }),
       fontSize: windowWidth > 500 ? 30 : 10,
       fontWeight: "bold",
       textAlign: "center",
@@ -43,7 +47,11 @@ const Box = ({children, style}) => {
   return (
     <View style={[dynamicStyles.box, style]}>
       {children}
-      <Text style={dynamicStyles.text}>hello</Text>
+      <Text style={dynamicStyles.text}>
+        {
+          Platform.OS === "android" ? "Android" : "Others" // for small changes
+        }
+      </Text>
     </View>
   );
 };
