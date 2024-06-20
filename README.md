@@ -59,3 +59,7 @@ onPressIn
 - renders items lazely and saved processing time
 - ItemSeparatorComponent - except for top and bottom
 - ListEmptyComponent - when the data is empty array
+
+# Navigation
+- npm install @react-navigation/native
+- npx expo install react-native-screens react-native-safe-area-context

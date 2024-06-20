@@ -7,9 +7,11 @@ const pageType = {
   LIST: "list",
   FORM: "form",
 }
-const Post = () => {
+const Post = ({route}) => {
+  const {postData} = route.params;
   const [page, setPage] = useState(pageType.LIST);
   return(<View style={styles.postContainer}>
+    <Text>{postData}</Text>
     {
       page === pageType.LIST && <PostList changePage={() => setPage(pageType.FORM)}/>
     }
