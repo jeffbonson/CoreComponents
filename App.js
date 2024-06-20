@@ -4,14 +4,14 @@ import { restaurantData } from './assets/data/restaurantData';
 // import Restaurants from './components/Foodies/Restaurants';
 // import RestaurantMenu from './components/Foodies/RestaurantMenu';
 // import Login from './components/Login';
-import PostList from './components/PostList';
+import Post from './components/Post';
 
 export default function App() {
  
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
-          <PostList />
+          <Post />
       </View>
     </SafeAreaView>
   );
