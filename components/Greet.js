@@ -6,8 +6,8 @@ const Greet = ({route, navigation}) => {
   const {name} = route.params;
   return(<View style={styles.greetContainer}>
     <Text>Hello {name}</Text>
-    <Button title="Go to Post" onPress={() => navigation.navigate("Post", {postData: "Data passed from post"})} />
-    <Button title="Update the name" onPress={() => navigation.setParams({name: "JBN"})} />
+    <Button title="Go to Post" onPress={() => navigation.navigate("PostList")} />
+    {/* <Button title="Update the name" onPress={() => navigation.setParams({name: "JBN"})} /> */}
   </View>)
 }
 const styles = StyleSheet.create({

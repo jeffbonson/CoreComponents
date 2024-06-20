@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ActivityIndicator, FlatList, Button } from "react-native";
 import { useState, useEffect } from "react";
 
-const PostList = ({changePage}) => {
+const PostList = ({navigation}) => {
   const [data, setData] = useState({
     posts: [],
     isLoading: true,
@@ -29,18 +29,12 @@ const PostList = ({changePage}) => {
     }
   }, [data.refreshing])
 
-
-  console.log(data.isLoading)
   if (data.isLoading === true)
     {
       return(<ActivityIndicator size="large" color="red" animating={true}/>)
     }
 
   return(<View style={styles.listContainer}>
-    <View style={styles.pageHeader}>
-        <Text>Posts</Text>
-        <Button title="New Post" onPress={() => changePage()}/>
-    </View>
     {data.posts && <FlatList
       data={data.posts}
       ItemSeparatorComponent={() => <View style={{height: 16}}/>}
@@ -60,11 +54,7 @@ const PostList = ({changePage}) => {
 const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
-  },
-  pageHeader: {
-    flexDirection: "row",
-    paddingVertical: 16,
-    justifyContent: "space-between"
+    padding: 16,
   },
   postItem: {
     backgroundColor: "#FFF",

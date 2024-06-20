@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { useState, useEffect } from "react";
 
-const PostForm = ({changePage}) => {
+const PostForm = ({ navigation }) => {
   const [data, setData] = useState({
     title: '',
     body: '',
@@ -33,7 +33,7 @@ const PostForm = ({changePage}) => {
       isLoading: false,
     });
     alert("Successfully posted")
-    changePage();
+    navigation.navigate("PostList");
   };
 
 
@@ -41,20 +41,15 @@ const PostForm = ({changePage}) => {
     if (data.isLoading) {
       addPost();
     }
-  }, [data.isLoading])
+  }, [data.isLoading]);
 
   const handleSubmit = () => {
     if (validateForm()) {
       setData({...data, isLoading: true})
     }
-  }
+  };
 
-
-  return(<View style={styles.listContainer}>
-    <View style={styles.pageHeader}>
-        <Text>New Post</Text>
-        <Button title="Back" onPress={() => changePage()}/>
-    </View>
+  return(<View style={styles.formContainer}>
     <View style={styles.postForm}>
     <Text style={styles.label}>Title</Text>
         <TextInput
@@ -86,13 +81,9 @@ const PostForm = ({changePage}) => {
 }
 
 const styles = StyleSheet.create({
-  listContainer: {
+  formContainer: {
     flex: 1,
-  },
-  pageHeader: {
-    flexDirection: "row",
-    paddingVertical: 16,
-    justifyContent: "space-between"
+    padding: 16,
   },
   postForm: {
     backgroundColor: "#FFF",
