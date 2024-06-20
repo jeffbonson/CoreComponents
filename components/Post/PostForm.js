@@ -1,7 +1,17 @@
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
-const PostForm = ({ navigation }) => {
+const PostForm = ({ navigation, route }) => {
+
+  const {name} = route.params;
+
+  // can use useEffect, but you can notice a slight delay.
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "Add Post"
+    })
+  }, [navigation, name])
+
   const [data, setData] = useState({
     title: '',
     body: '',

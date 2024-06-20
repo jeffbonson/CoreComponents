@@ -32,7 +32,11 @@ export default function App() {
           contentStyle: {backgroundColor: "#e8e4f3"},
         }}
       >
-        <Stack.Screen name="Greet" component={Greet} options={{title: "Welcome"}} initialParams={{ name: 'John Doe' }} />
+        <Stack.Screen
+          name="Greet"
+          component={Greet}
+          options={{title: "Welcome"}}
+          initialParams={{ name: 'John Doe' }} />
         <Stack.Screen
           name="PostList" 
           component={PostList}
@@ -40,7 +44,11 @@ export default function App() {
             title: "Post List",
             ...newPostButton(navigation),
           })} />
-        <Stack.Screen name="PostForm" component={PostForm} options={{title: "Post Form"}} />
+        <Stack.Screen
+          name="PostForm"
+          component={PostForm}
+          initialParams={{ name: 'Post Form' }}
+          options={{title: "Post Form"}} />
 
       </Stack.Navigator>
     </NavigationContainer>
