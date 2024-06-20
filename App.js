@@ -3,14 +3,15 @@ import { restaurantData } from './assets/data/restaurantData';
 // import NativeComponents from './components/NativeComponents';
 // import Restaurants from './components/Foodies/Restaurants';
 // import RestaurantMenu from './components/Foodies/RestaurantMenu';
-import Login from './components/Login';
+// import Login from './components/Login';
+import PostList from './components/PostList';
 
 export default function App() {
  
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
-          <Login />
+          <PostList />
       </View>
     </SafeAreaView>
   );
