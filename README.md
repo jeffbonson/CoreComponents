@@ -63,3 +63,11 @@ onPressIn
 # Navigation
 - npm install @react-navigation/native
 - npx expo install react-native-screens react-native-safe-area-context
+
+# Drawer
+- npm install @react-navigation/drawer
+- npm install react-native-gesture-handler react-native-reanimated
+- update the babe..config.js
+- update the package.json with the versions if needed
+    - "react-native-gesture-handler": "~2.16.1",
+    - "react-native-reanimated": "~3.10.1",

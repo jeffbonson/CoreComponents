@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, KeyboardAvoidingView, Platform, Image, TextInput, Button } from "react-native";
+import { View, Text, StyleSheet, KeyboardAvoidingView, Platform, Image, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -19,7 +19,10 @@ const Login = () => {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      alert('Success')
+      if (data.username === "admin" && data.password === "admin") {
+        // navigation.toggleDrawer(); // this opens the drawer
+        navigation.jumpTo("PostList") // this would go to the post list page
+      }
     }
   }
 
@@ -31,10 +34,10 @@ const Login = () => {
       style={styles.container}>
       <View style={styles.loginForm}>
         <Image source={require("../assets/adaptive-icon.png")} style={styles.logo}/>
-        <Text style={styles.label}>UserName</Text>
+        <Text style={styles.label}>Username</Text>
         <TextInput
           style={styles.input}
-          placeholder="Enter your username"
+          placeholder="Enter username"
           value={data.username}
           onChangeText={(username) => setData({...data, username, errors: {...data.errors,username: undefined}})}/>
         {
@@ -45,15 +48,19 @@ const Login = () => {
         <TextInput
           secureTextEntry
           style={styles.input}
-          placeholder="Enter your password"
+          placeholder="Enter password"
           value={data.password}
           onChangeText={(password) => setData({...data, password, errors: {...data.errors, password: undefined}})}/>
         {
           data.errors && data.errors.password && <Text style={styles.errorLabel}>Password is required</Text>
         }
-
-        <Button style={styles.submitButton} title="Login" onPress={() => handleSubmit()} />
+        <TouchableOpacity style={styles.submitButton} onPress={() => handleSubmit()}>
+          <Text style={styles.submitButtonText}>Login</Text>
+        </TouchableOpacity>
+        
+        
       </View>
+      
     </KeyboardAvoidingView>
   );
 };
@@ -70,17 +77,23 @@ const styles = StyleSheet.create({
   },
   loginForm: {
     padding: 20,
-    borderRadius: 10,
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 2},
-    shadowRadius: 4,
-    elevation: 5,
+    
   },
   label: {fontSize: 16, marginBottom: 2, fontWeight: "bold", marginTop: 10,},
   input: {height: 40, borderColor: "#ddd", borderWidth: 1, borderRadius: 5, padding: 5},
   errorLabel: {fontSize: 16, marginBottom: 2, color: "red"},
-  submitButton: {marginTop: 300,},
-
+  submitButton: {
+    backgroundColor: '#6a51ae',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50, // Adjusted height to 50
+    borderRadius: 5,
+    marginTop: 16,
+  },
+  submitButtonText: {
+    color: '#FFF',
+    fontSize: 16,
+  },
 });
 
 
