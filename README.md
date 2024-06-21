@@ -69,5 +69,13 @@ onPressIn
 - npm install react-native-gesture-handler react-native-reanimated
 - update the babe..config.js
 - update the package.json with the versions if needed
-    - "react-native-gesture-handler": "~2.16.1",
-    - "react-native-reanimated": "~3.10.1",
+  - "react-native-gesture-handler": "~2.16.1",
+  - "react-native-reanimated": "~3.10.1",
+
+# run in web
+  - PowerShell -ExecutionPolicy Bypass -Command "expo install react-dom react-native-web @expo/webpack-config"
+  - npx expo install react-dom react-native-web @expo/webpack-config
+  - update package.json
+  - update app.json
+  - npm run web
+
